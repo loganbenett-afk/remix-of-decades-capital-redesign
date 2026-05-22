@@ -1,24 +1,7 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { PageTransition } from "@/components/PageTransition";
-
-import appCss from "../styles.css?url";
-
-const SITE_URL = "https://decadescapitalgroup.com";
-
-const ORG_JSONLD = {
-  "@context": "https://schema.org",
-  "@type": "FinancialService",
-  name: "Decades Capital Group",
-  description:
-    "Premier hotel investments offering growth equity and 10–12% income-fund returns for accredited investors.",
-  url: SITE_URL,
-  telephone: "+1-678-978-7222",
-  email: "contact@decadescapitalgroup.com",
-  areaServed: "United States",
-  serviceType: "Hotel Investment",
-};
 
 function NotFoundComponent() {
   return (
@@ -44,69 +27,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#1a1d24" },
-      { title: "Decades Capital Group | Hotel Investments for Generational Wealth" },
-      {
-        name: "description",
-        content:
-          "Premier hotel investments with growth equity and 10–12% income-fund returns. Investor-first hospitality opportunities backed by Hilton, Marriott, Hyatt & IHG.",
-      },
-      { name: "keywords", content: "hotel investments, real estate, accredited investor, hospitality fund, passive income, Decades Capital Group" },
-      { name: "author", content: "Decades Capital Group" },
-      { name: "robots", content: "index, follow" },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Decades Capital Group" },
-      { property: "og:locale", content: "en_US" },
-      { property: "og:url", content: SITE_URL },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "format-detection", content: "telephone=yes" },
-      { property: "og:title", content: "Decades Capital Group | Hotel Investments for Generational Wealth" },
-      { name: "twitter:title", content: "Decades Capital Group | Hotel Investments for Generational Wealth" },
-      { name: "description", content: "A modern, clean real estate investor website redesign." },
-      { property: "og:description", content: "A modern, clean real estate investor website redesign." },
-      { name: "twitter:description", content: "A modern, clean real estate investor website redesign." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60c6d5bc-b013-4bcf-a883-1656ab395ca9/id-preview-aaa93d65--7fb9880b-e614-41e5-ad12-1d7b1ec08f41.lovable.app-1777459039247.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60c6d5bc-b013-4bcf-a883-1656ab395ca9/id-preview-aaa93d65--7fb9880b-e614-41e5-ad12-1d7b1ec08f41.lovable.app-1777459039247.png" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: SITE_URL },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(ORG_JSONLD),
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (
