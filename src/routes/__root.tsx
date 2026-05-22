@@ -64,6 +64,13 @@ export const Route = createRootRoute({
       { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "format-detection", content: "telephone=yes" },
+      { property: "og:title", content: "Decades Capital Group | Hotel Investments for Generational Wealth" },
+      { name: "twitter:title", content: "Decades Capital Group | Hotel Investments for Generational Wealth" },
+      { name: "description", content: "A modern, clean real estate investor website redesign." },
+      { property: "og:description", content: "A modern, clean real estate investor website redesign." },
+      { name: "twitter:description", content: "A modern, clean real estate investor website redesign." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60c6d5bc-b013-4bcf-a883-1656ab395ca9/id-preview-aaa93d65--7fb9880b-e614-41e5-ad12-1d7b1ec08f41.lovable.app-1777459039247.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60c6d5bc-b013-4bcf-a883-1656ab395ca9/id-preview-aaa93d65--7fb9880b-e614-41e5-ad12-1d7b1ec08f41.lovable.app-1777459039247.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
